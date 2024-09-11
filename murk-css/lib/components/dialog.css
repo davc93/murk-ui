@@ -1,0 +1,51 @@
+.dialog {
+  width: 300px;
+  padding: 20px;
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  scale: 0;
+  transition: scale .7s ease-in, display .7s ease-in allow-discrete;
+
+}
+.dialog[open]{
+    scale: 1;
+    opacity: 1;
+    transition: scale .3s ease-in,opacity .3s ease-in;
+    @starting-style{
+        scale:.7;
+        opacity: 0;
+    }
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog p {
+  margin: 0 0 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.dialog__footer{
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+}
+.dialog form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dialog form button:hover {
+  background-color: #0056b3;
+}
