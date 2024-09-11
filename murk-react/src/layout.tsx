@@ -1,3 +1,5 @@
+
+import { useRef } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 
 const links = [
@@ -41,9 +43,9 @@ export function DesignSystemLayout() {
             </div>
           </div>
 
-        {/* <div className="bg-slate-950 m-4  rounded-lg">
-          <Footer />
-        </div> */}
+          <div className="bg-slate-950 m-4  rounded-lg">
+            {/* <Footer /> */}
+          </div>
         </main>
       </div>
       <aside
@@ -62,7 +64,7 @@ export function DesignSystemLayout() {
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      style={{fontFamily:'var(--font-titles)'}}
+                      style={{ fontFamily: 'var(--font-titles)' }}
                       className="text-base capitalize text-gray-200 hover:text-rose-600 transition-colors  font-normal rounded-lg flex items-center p-2 group"
                     >
                       <span className="ml-3">{link.name}</span>
@@ -74,6 +76,64 @@ export function DesignSystemLayout() {
           </div>
         </div>
       </aside>
+      <MobileMenu />
     </div>
+  )
+}
+
+export const MobileMenu = () => {
+  const menu = useRef<HTMLElement>(null)
+  const button = useRef<HTMLButtonElement>(null)
+  const handleBurgerClick = () => {
+    button.current?.classList.toggle('menu-button--open')
+    menu.current?.classList.toggle('hidden')
+  }
+  const handleItemClick = () => {
+    button.current?.classList.remove('menu-button--open')
+    menu.current?.classList.add('hidden')
+    
+  }
+  return (
+    <>
+      <div className="lg:hidden fixed bottom-4
+       w-full justify-center  flex z-30 ">
+        <button className='menu-button bg-black p-3' onClick={handleBurgerClick} ref={button}>
+          <span className="menu-button__line1 menu-button__line" />
+          <span className="menu-button__line2 menu-button__line" />
+          <span className="menu-button__line3 menu-button__line" />
+        </button>
+      </div>
+
+      <aside
+        ref={menu}
+        id="sidebar"
+        className="z-20 h-screen fixed w-full bg-black content-center  hidden flex-shrink-0 flex-col  transition-width duration-75 "
+        aria-label="Sidebar"
+        style={{
+          boxShadow: 'var(--shadow-sm)'
+        }}
+      >
+        <div className="relative flex-1 flex flex-col min-h-0 borderR pt-0">
+          <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+            <div className="flex-1 px-3  divide-y space-y-1">
+              <ul className="space-y-2 pb-2 flex flex-col items-center justify-center">
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      onClick={handleItemClick}
+                      to={link.href}
+                      style={{ fontFamily: 'var(--font-titles)' }}
+                      className="text-base capitalize text-gray-200 hover:text-rose-600 transition-colors  font-normal rounded-lg flex items-center p-2 group"
+                    >
+                      <span className="">{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </>
   )
 }
