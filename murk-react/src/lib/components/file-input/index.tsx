@@ -1,5 +1,5 @@
 import { ButtonSizes, ButtonVariant } from '../button'
-import React, { InputHTMLAttributes } from 'react'
+import { InputHTMLAttributes } from 'react'
 
 type FileInputProps = {
     variant?:ButtonVariant,

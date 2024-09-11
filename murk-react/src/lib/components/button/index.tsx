@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, LabelHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 export enum ButtonSizes {
   LARGE = "large",

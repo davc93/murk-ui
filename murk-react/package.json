@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:components-app":"vite build --config ./components-app.vite.config.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -20,7 +21,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@davc93/murk-css": "^0.0.2",
     "@eslint/js": "^9.9.0",
+    "@mdx-js/rollup": "^3.0.1",
     "@tanstack/react-table": "^8.20.5",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.3",

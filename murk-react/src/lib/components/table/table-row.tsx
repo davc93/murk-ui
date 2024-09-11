@@ -12,7 +12,7 @@ export const OptionButton = ({
     rowData: unknown
   }) => {
     const menuRef = useRef<HTMLDivElement>(null)
-    const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
       if (menuRef.current?.classList.contains('option-menu--closed')) {
         menuRef.current?.classList.remove('option-menu--closed')
       } else {
