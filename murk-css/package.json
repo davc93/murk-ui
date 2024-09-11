@@ -1,8 +1,8 @@
 {
   "name": "@davc93/murk-css",
-  "private": false,
   "main": "main.js",
-  "version": "0.0.1",
+  "private":false,
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
