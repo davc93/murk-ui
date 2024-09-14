@@ -4,6 +4,7 @@
 :root {
   --font-titles: "Orbitron", sans-serif;
   --font-paragraph: "Rajdhani", sans-serif;
+  
   /* separadores, componentes, titulos,iconos, links, efectos hover */
   
   --primary--50: #fff0f0;
@@ -25,6 +26,7 @@
   --primary--850: #330001;
   --primary--900: #110001;
   --primary--950: #0a0001;
+
   /*  separadores,textos importantes(titulos,navbar links, componentes)*/
   
   --secondary--50: #ea6725;
