@@ -15,7 +15,7 @@ export const Input = forwardRef<
   return (
     <label className="input-container">
       <span className="input__label">{label}</span>
-      <input {...props} className="input" ref={ref} />
+      <input className="input" ref={ref} {...props}  />
       {error && (
         <div className="error-message">
           <div className="error-message__icon-container">
